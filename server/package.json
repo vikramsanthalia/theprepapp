@@ -1,0 +1,33 @@
+{
+  "name": "Vizury-Server",
+  "version": "0.0.0",
+  "description": "Nodejs backend for vizury app",
+  "main": "index.js",
+  "dependencies": {
+    "express": "~3.4.4",
+    "vertica": "~0.4.1",
+    "body-parser": "~1.9.0",
+    "client-sessions": "^0.7.0",
+    "bluebird": "~2.2.0",
+    "node-expat": "2.0.0",
+    "timed": "~0.1.1",
+    "lodash": "~2.2.1",
+    "generic-pool": "~2.0.4",
+    "yummy": "~1.1.1",
+    "client-sessions": "~0.7.0",
+    "request": "~2.29.0",
+    "nodemailer": "~0.6.0",
+    "express-bouncer": "^0.1.2",
+    "agenda": "~0.6.19",
+    "jade": "~1.7.0"
+  },
+  "devDependencies": {
+    "agenda-ui": "0.0.6",
+    "jade": "~1.7.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vizury",
+  "license": "BSD"
+}

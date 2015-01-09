@@ -1,0 +1,62 @@
+
+<div class="row">
+  <div class="nav-header">
+    <div class="row">
+      <div class="col-sm-5 col-sm-offset-1 logo"> <span>PrepApp</span></div>
+      <div class="col-sm-6">
+        <div class="row">
+          <div ng-repeat="tab in tabs" ng-class="{'active' : tab.active}" ng-click="activated($index)" class="{{tab.className}}"><span>{{tab.label}}
+              <div ng-show="tabs[5].active &amp;&amp; $index === 5" ng-cloak="" class="down-arrow"></div></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div ng-show="tabs[5].active" ng-cloak="" class="login-page animated fadeIn">
+  <div class="message-container">
+    <div ng-class="loginError.show ? 'enableVisibility animated bounceIn' : 'disableVisibility animated bounceOut'" ng-cloak="" class="message"><i class="fa fa-exclamation-triangle"></i><span> </span>{{loginError.message}}</div>
+  </div>
+  <form role="form" name="loginform" novalidate="novalidate" autocomplete="off">
+    <fieldset class="fields">
+      <div class="row input-ele">
+        <div class="col-sm-12">
+          <input id="username" type="text" placeholder="Username" ng-model="username" ng-disabled="isLoading" autofocus="autofocus" class="form-control input-lg"/>
+        </div>
+      </div>
+      <div class="row input-ele">
+        <div class="col-sm-12">
+          <input id="password" type="password" placeholder="Password" ng-model="password" ng-disabled="isLoading" ng-trim="false" class="form-control input-lg"/>
+        </div>
+      </div>
+      <div class="row input-ele">
+        <div class="col-sm-12">
+          <button id="submit" ng-disabled="isLoading" type="submit" ng-click="doLogin()" class="btn btn-danger btn-block btn-lg"><span ng-if="!isLoading"><span>Login</span><span> »</span></span><span ng-if="isLoading"><i class="fa fa-spinner fa-spin"> </i>Please Wait</span></button>
+        </div>
+      </div>
+      <div class="row input-ele">
+        <div class="col-sm-12"><span>Forgot Password (let us know)</span></div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<div class="scroll-box">
+  <div class="row">
+    <div id="homelink" class="block"></div>
+  </div>
+  <div class="row">
+    <div id="whyus" class="block">
+      <div ng-repeat="block in sliderBlocks" class="slider-container">
+        <div ng-if="block.isActive" ng-include="block.content" class="slides"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div id="partners" class="block"></div>
+  </div>
+  <div class="row">
+    <div id="blog" class="block"></div>
+  </div>
+  <div class="row">
+    <div id="contactus" class="block"></div>
+  </div>
+</div>

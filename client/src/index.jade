@@ -1,0 +1,18 @@
+!!! 5
+html(ng-app="prepApp")
+  head
+    base(href='/')
+    title PrepApp
+    meta(charset="UTF-8")
+    meta(http-equiv='X-UA-Compatible', content='IE=Edge')
+    meta(property='og:title', content='prepApp')
+    meta(property='og:type', content='website')
+
+    link(rel="stylesheet", type="text/css", href="/assets/#{pkg.name}-#{pkg.version}.css")
+    script(type="text/javascript", src="/assets/#{pkg.name}-#{pkg.version}.js", charset="utf-8")
+  body.home(ng-controller="prepController")
+    div.mygrowl.bounceIn.animated(growl="")
+    div.container-fuild
+      div.content
+        section.mainView(ui-view="")
+    

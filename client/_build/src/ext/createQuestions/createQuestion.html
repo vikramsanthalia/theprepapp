@@ -1,0 +1,100 @@
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="set set-details">
+      <div class="row input-container">
+        <div class="col-sm-2">
+          <label>Category / Exam Name : </label>
+        </div>
+        <div class="col-sm-4">
+          <input type="text" placeholder="" class="form-control input-sm"/>
+        </div>
+        <div class="col-sm-6"> <span>enter the name of the subject, this may be prepopulated</span></div>
+      </div>
+      <div class="row input-container">
+        <div class="col-sm-2">
+          <label>Sub-Category :</label>
+        </div>
+        <div class="col-sm-4">
+          <input type="text" placeholder="" class="form-control input-sm"/>
+        </div>
+        <div class="col-sm-6"><span>enter sub-category/sections the sub, this may also be prepopulated</span></div>
+      </div>
+      <div class="row input-container">
+        <div class="col-sm-2">
+          <label>Set Name :</label>
+        </div>
+        <div class="col-sm-4">
+          <input type="text" placeholder="" class="form-control input-sm"/>
+        </div>
+        <div class="col-sm-6"><span>give this set a name/alias for your future reference</span></div>
+      </div>
+      <div class="row input-container">
+        <div class="col-sm-2">
+          <label>Created By :</label>
+        </div>
+        <div class="col-sm-4">
+          <input type="text" placeholder="" class="form-control input-sm"/>
+        </div>
+        <div class="col-sm-6"><span>enter the name of the creator to keep track of who created what</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-9">
+    <div class="set set-body">
+      <div class="row">
+        <div class="col-sm-1 col-sm-custon-1"><span class="sequence s-question">{{selectedQuestion.sequence}} &#46;</span></div>
+        <div class="col-sm-11 col-sm-custon-11">
+          <textarea msd-elastic="
+" ng-model="selectedQuestion.questionDesc" class="animate form-control"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-1 col-sm-custon-1"><span ng-click="changeCorrectOption(1,selectedQuestion.sequence)" ng-class="selectedQuestion.options[0].correct ? 'correctoption' : 'wrongoption'" class="sequence s-option"><i ng-class="selectedQuestion.options[0].correct ? 'fa-check' : 'fa-times'" class="fa">&nbsp;a&#41;</i></span></div>
+        <div class="col-sm-5 col-sm-custon-5">
+          <textarea msd-elastic="
+" ng-model="selectedQuestion.options[0].label" class="animate form-control"></textarea>
+        </div>
+        <div class="col-sm-1 col-sm-custon-1"><span ng-click="changeCorrectOption(2,selectedQuestion.sequence)" ng-class="selectedQuestion.options[1].correct ? 'correctoption' : 'wrongoption'" class="sequence s-option"><i ng-class="selectedQuestion.options[1].correct ? 'fa-check' : 'fa-times'" class="fa">&nbsp;b&#41;</i></span></div>
+        <div class="col-sm-5 col-sm-custon-5">
+          <textarea msd-elastic="
+" ng-model="selectedQuestion.options[1].label" class="animate form-control"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-1 col-sm-custon-1"><span ng-click="changeCorrectOption(3,selectedQuestion.sequence)" ng-class="selectedQuestion.options[2].correct ? 'correctoption' : 'wrongoption'" class="sequence s-option"><i ng-class="selectedQuestion.options[2].correct ? 'fa-check' : 'fa-times'" class="fa">&nbsp;c&#41;</i></span></div>
+        <div class="col-sm-5 col-sm-custon-5">
+          <textarea msd-elastic="
+" ng-model="selectedQuestion.options[2].label" class="animate form-control"></textarea>
+        </div>
+        <div class="col-sm-1 col-sm-custon-1"><span ng-click="changeCorrectOption(4,selectedQuestion.sequence)" ng-class="selectedQuestion.options[3].correct ? 'correctoption' : 'wrongoption'" class="sequence s-option"><i ng-class="selectedQuestion.options[3].correct ? 'fa-check' : 'fa-times'" class="fa">&nbsp;d&#41;</i></span></div>
+        <div class="col-sm-5 col-sm-custon-5">
+          <textarea msd-elastic="
+" ng-model="selectedQuestion.options[3].label" class="animate form-control"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-8 margin-top-20">
+          <div class="btn-group pull-right">
+            <label uncheckable="" ng-click="clearQuestion(selectedQuestion.sequence)" class="btn btn-warning"><i class="fa fa-times-circle">&nbsp;Clear Changes</i></label>
+            <label uncheckable="" ng-disabled="selectedQuestion.sequence === setLength" ng-click="gotoQuestion(selectedQuestion.sequence)" class="btn btn-primary">Goto Next Question &nbsp;<i class="fa fa-angle-double-right"></i></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="set set-nav"><span ng-click="gotoQuestion($index)" ng-class="{'active' : selectedQuestion.sequence == ($index+1)}" ng-repeat="label in questionLabels" class="label label-question {{label.labelClass}}">{{label.sequence}}</span>
+      <div class="row save-buttons">
+        <div class="col-sm-12">
+          <div class="btn-group">
+            <label uncheckable="" class="btn btn-warning btn-sm"><i class="fa fa-star-half-o">&nbsp;Complete Later</i></label>
+            <label uncheckable="" class="btn btn-primary btn-sm"><i class="fa fa-star">&nbsp;Save Set Now</i></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

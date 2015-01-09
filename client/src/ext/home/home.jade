@@ -1,0 +1,49 @@
+div.row
+  div.nav-header
+    div.row
+      div.col-sm-5.col-sm-offset-1.logo  
+        span PrepApp
+      div.col-sm-6
+        div.row
+          div(ng-repeat="tab in tabs", class="{{tab.className}}" , ng-class="{'active' : tab.active}", ng-click="activated($index)")
+            span {{tab.label}}
+              div.down-arrow(ng-show="tabs[5].active && $index === 5" , ng-cloak="")
+div.login-page(ng-show="tabs[5].active", class="animated fadeIn", ng-cloak="")
+  div.message-container
+    div.message(ng-class="loginError.show ? 'enableVisibility animated bounceIn' : 'disableVisibility animated bounceOut'", ng-cloak="")
+      i.fa.fa-exclamation-triangle
+      span 
+      | {{loginError.message}}
+  form(role='form', name="loginform", novalidate='novalidate', autocomplete="off")
+    fieldset.fields
+      div.row.input-ele
+        div.col-sm-12
+          input#username.form-control.input-lg(type='text', placeholder="Username", ng-model='username', ng-disabled='isLoading', autofocus)
+      div.row.input-ele
+        div.col-sm-12
+          input#password.form-control.input-lg(type='password', placeholder="Password", ng-model='password', ng-disabled='isLoading', ng-trim="false")
+      div.row.input-ele
+        div.col-sm-12
+          button#submit.btn.btn-danger.btn-block.btn-lg(ng-disabled='isLoading', type='submit', ng-click='doLogin()')
+            span(ng-if='!isLoading')
+              span Login
+              span  »
+            span(ng-if='isLoading')
+              i.fa.fa-spinner.fa-spin 
+              | Please Wait
+      div.row.input-ele
+        div.col-sm-12
+          span Forgot Password (let us know)
+div.scroll-box
+  div.row
+    div.block#homelink
+  div.row
+    div.block#whyus
+      div.slider-container(ng-repeat="block in sliderBlocks")
+        div.slides(ng-if="block.isActive", ng-include="block.content")
+  div.row
+    div.block#partners
+  div.row
+    div.block#blog
+  div.row
+     div.block#contactus

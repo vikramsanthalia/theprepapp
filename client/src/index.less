@@ -1,0 +1,215 @@
+@font-face {
+  font-family: 'PT Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Mono'), local('PTMono-Regular'), url('ptmono.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: 'Fredoka One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Fredoka One'), local('FredokaOne-Regular'), url('fredoka.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+  font-family: 'proxima_nova_rgbold';
+  src: url('proxima_nova_bold-webfont.eot');
+  src: url('proxima_nova_bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('proxima_nova_bold-webfont.woff') format('woff'),
+       url('proxima_nova_bold-webfont.ttf') format('truetype'),
+       url('proxima_nova_bold-webfont.svg#proxima_nova_rgbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'proxima_nova_rgregular';
+  src: url('proxima_nova_regular-webfont.eot');
+  src: url('proxima_nova_regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('proxima_nova_regular-webfont.woff') format('woff'),
+       url('proxima_nova_regular-webfont.ttf') format('truetype'),
+       url('proxima_nova_regular-webfont.svg#proxima_nova_rgregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'proxima_novalight';
+  src: url('proxima_nova_light-webfont.eot');
+  src: url('proxima_nova_light-webfont.eot?#iefix') format('embedded-opentype'),
+       url('proxima_nova_light-webfont.woff') format('woff'),
+       url('proxima_nova_light-webfont.ttf') format('truetype'),
+       url('proxima_nova_light-webfont.svg#proxima_novalight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'source_sans_proregular';
+  src: url('sourcesanspro-regular-webfont.eot');
+  src: url('sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('sourcesanspro-regular-webfont.woff') format('woff'),
+       url('sourcesanspro-regular-webfont.ttf') format('truetype'),
+       url('sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'source_sans_prolight';
+  src: url('sourcesanspro-light-webfont.eot');
+  src: url('sourcesanspro-light-webfont.eot?#iefix') format('embedded-opentype'),
+       url('sourcesanspro-light-webfont.woff') format('woff'),
+       url('sourcesanspro-light-webfont.ttf') format('truetype'),
+       url('sourcesanspro-light-webfont.svg#source_sans_prolight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'source_sans_probold';
+  src: url('sourcesanspro-bold-webfont.eot');
+  src: url('sourcesanspro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('sourcesanspro-bold-webfont.woff') format('woff'),
+       url('sourcesanspro-bold-webfont.ttf') format('truetype'),
+       url('sourcesanspro-bold-webfont.svg#source_sans_probold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+.mygrowl .growl {
+  position: absolute;
+  top: -2px;
+  width:50%;
+  font-size: 16px;
+  right: 0;
+  margin: 0px auto;
+  left: 0;
+  font-weight: 700;
+  z-index: 1000;
+  text-align: center;
+}
+
+.mygrowl .alert{
+  padding: 10px;
+  border-top-left-radius: 0px;
+}
+
+@media only screen and (max-width: 480px) {
+  body.home {
+    overflow-x:auto; 
+    overflow-y: auto;
+  }
+}
+
+body.home {
+  width: 100%;
+  height:100%;
+  overflow-x:hidden; 
+  overflow-y: hidden;
+  background-color: #ffffff;
+  font-family: 'proxima_nova_rgregular';
+
+  .content .mainView {
+    position:absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .8s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .content .mainView.ng-enter {
+    left: -20%;
+    opacity: 0;
+  }
+
+  .content .mainView.ng-enter-active {
+    left: 0;
+    opacity: 1;
+  }
+
+  .content .mainView.ng-leave {
+    left: 0;
+    opacity: 1;
+  }
+
+  .content .mainView.ng-leave-active {
+    left: 40%;
+    opacity: 0;
+  }
+
+  img{
+    max-width:100%;
+  }
+
+  a{
+    font-family: 'proxima_novalight';
+  }
+
+  h3, h2{
+    font-family: 'proxima_nova_rgregular';
+  }
+
+  p{
+    font-family: 'source_sans_prolight';
+  }
+
+  .no-padding-container-fluid{
+    padding:0px;
+  }
+
+  .text-align-left{
+    text-align: left;
+  }
+
+  .margin-top-10{
+    margin-top:10px;
+  }
+
+  .margin-top-15{
+    margin-top:15px;
+  }
+
+  .padding-top-12{
+    padding-top:12px;
+  }
+
+  .margin-top-20{
+    margin-top:20px;
+  }
+
+  .margin-top-30{
+    margin-top:30px;
+  }
+
+  .margin-top-40{
+    margin-top:40px;
+  }
+
+  .margin-bottom-40{
+    margin-bottom:40px;
+  }
+
+  .margin-bottom-30{
+    margin-bottom:30px;
+  }
+
+  .margin-bottom-20{
+    margin-bottom:20px;
+  }
+
+}
+
+ 
+
+  
+
+
+

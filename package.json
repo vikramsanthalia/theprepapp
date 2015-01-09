@@ -1,0 +1,17 @@
+{
+  "name": "VizuryApp",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server/index.js",
+  "dependencies": {
+    "lodash": "~2.4.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vizury",
+  "license": "BSD"
+}

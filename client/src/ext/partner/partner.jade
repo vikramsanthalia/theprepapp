@@ -1,0 +1,12 @@
+div.row.partner
+  div.app-header
+    div.row
+      div.col-sm-5.col-sm-offset-1.logo  
+        span PrepApp
+      div.col-sm-4.col-sm-offset-1
+        div.row.logout
+          div.btn.btn-sm.btn-primary.pull-right(ng-click="logout()")
+            i.fa.fa-sign-out
+            | &nbsp; Logout
+  div.partner-container(ui-view="")
+  

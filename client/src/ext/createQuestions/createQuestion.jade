@@ -1,0 +1,101 @@
+div.row
+  div.col-sm-12
+    div.set.set-details
+      div.row.input-container
+        div.col-sm-2
+          label Category / Exam Name : 
+        div.col-sm-4
+          input.form-control.input-sm(type="text", placeholder="")
+        div.col-sm-6 
+          span enter the name of the subject, this may be prepopulated
+      div.row.input-container
+        div.col-sm-2
+          label Sub-Category :
+        div.col-sm-4
+          input.form-control.input-sm(type="text", placeholder="")
+        div.col-sm-6
+          span enter sub-category/sections the sub, this may also be prepopulated
+      div.row.input-container
+        div.col-sm-2
+          label Set Name :
+        div.col-sm-4
+          input.form-control.input-sm(type="text", placeholder="")
+        div.col-sm-6
+          span give this set a name/alias for your future reference
+      div.row.input-container
+        div.col-sm-2
+          label Created By :
+        div.col-sm-4
+          input.form-control.input-sm(type="text", placeholder="")
+        div.col-sm-6
+          span enter the name of the creator to keep track of who created what
+          
+          
+
+div.row
+  div.col-sm-9
+    div.set.set-body
+      div.row
+        div.col-sm-1.col-sm-custon-1
+          span.sequence.s-question {{selectedQuestion.sequence}} &#46;
+        div.col-sm-11.col-sm-custon-11
+          textarea.animate.form-control(msd-elastic="\n", ng-model="selectedQuestion.questionDesc")
+      div.row
+        div.col-sm-1.col-sm-custon-1
+          span.sequence.s-option(
+            ng-click="changeCorrectOption(1,selectedQuestion.sequence)",
+            ng-class="selectedQuestion.options[0].correct ? 'correctoption' : 'wrongoption'"
+            )
+            i.fa(ng-class="selectedQuestion.options[0].correct ? 'fa-check' : 'fa-times'") &nbsp;a&#41;
+        div.col-sm-5.col-sm-custon-5
+          textarea.animate.form-control(msd-elastic="\n", ng-model="selectedQuestion.options[0].label")
+        div.col-sm-1.col-sm-custon-1
+          span.sequence.s-option(
+             ng-click="changeCorrectOption(2,selectedQuestion.sequence)",
+             ng-class="selectedQuestion.options[1].correct ? 'correctoption' : 'wrongoption'"
+             )
+            i.fa(ng-class="selectedQuestion.options[1].correct ? 'fa-check' : 'fa-times'") &nbsp;b&#41;
+        div.col-sm-5.col-sm-custon-5
+          textarea.animate.form-control(msd-elastic="\n", ng-model="selectedQuestion.options[1].label")
+      div.row
+        div.col-sm-1.col-sm-custon-1
+          span.sequence.s-option(
+            ng-click="changeCorrectOption(3,selectedQuestion.sequence)",
+            ng-class="selectedQuestion.options[2].correct ? 'correctoption' : 'wrongoption'"
+            )
+            i.fa(ng-class="selectedQuestion.options[2].correct ? 'fa-check' : 'fa-times'") &nbsp;c&#41;
+        div.col-sm-5.col-sm-custon-5
+          textarea.animate.form-control(msd-elastic="\n", ng-model="selectedQuestion.options[2].label")
+        div.col-sm-1.col-sm-custon-1
+          span.sequence.s-option(
+            ng-click="changeCorrectOption(4,selectedQuestion.sequence)",
+            ng-class="selectedQuestion.options[3].correct ? 'correctoption' : 'wrongoption'"
+             )
+            i.fa(ng-class="selectedQuestion.options[3].correct ? 'fa-check' : 'fa-times'") &nbsp;d&#41;
+        div.col-sm-5.col-sm-custon-5
+          textarea.animate.form-control(msd-elastic="\n", ng-model="selectedQuestion.options[3].label")
+      div.row
+        div.col-sm-4.col-sm-offset-8.margin-top-20
+          div.btn-group.pull-right
+            label.btn.btn-warning(uncheckable="",ng-click="clearQuestion(selectedQuestion.sequence)")
+              i.fa.fa-times-circle &nbsp;Clear Changes
+            label.btn.btn-primary(uncheckable="",ng-disabled="selectedQuestion.sequence === setLength", ng-click="gotoQuestion(selectedQuestion.sequence)")
+              | Goto Next Question &nbsp;
+              i.fa.fa-angle-double-right
+
+  div.col-sm-3
+    div.set.set-nav
+      span.label.label-question(
+        ng-click="gotoQuestion($index)",
+        class="{{label.labelClass}}",
+        ng-class="{'active' : selectedQuestion.sequence == ($index+1)}"
+        ng-repeat="label in questionLabels",
+      ) {{label.sequence}}
+      div.row.save-buttons
+        div.col-sm-12
+          div.btn-group
+            label.btn.btn-warning.btn-sm(uncheckable="")
+              i.fa.fa-star-half-o &nbsp;Complete Later
+            label.btn.btn-primary.btn-sm(uncheckable="")
+              i.fa.fa-star &nbsp;Save Set Now
+
